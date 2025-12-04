@@ -3,9 +3,9 @@ import "../styles/Hero.css";
 
 export default function Hero() {
   const images = [
-    "/images/air.jpg",
-    "/images/road.jpeg",
-    "/images/sea.jpg",
+    "/LogisticsWebsite/images/air.jpg",
+    "/LogisticsWebsite/images/road.jpeg",
+    "/LogisticsWebsite/images/sea.jpg",
   ];
 
   const [index, setIndex] = useState(0);

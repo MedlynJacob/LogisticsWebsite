@@ -53,9 +53,9 @@ export default function OverlandFreight() {
     <div className="overland-page">
       {/* Banner Section */}
       <div className="overland-banner">
-        <div 
+        <div
           className="banner-background"
-          style={{ backgroundImage: "url('/images/road.jpeg')" }}
+          style={{ backgroundImage: "url('/LogisticsWebsite/images/road.jpeg')" }}
         />
         <div className="banner-overlay" />
         

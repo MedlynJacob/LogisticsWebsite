@@ -44,9 +44,9 @@ export default function SeaFreight() {
     <div className="seafreight-page">
       {/* Banner Section */}
       <div className="seafreight-banner">
-        <div 
+        <div
           className="banner-background"
-          style={{ backgroundImage: "url('/images/sea.jpg')" }}
+          style={{ backgroundImage: "url('/LogisticsWebsite/images/sea.jpg')" }}
         />
         <div className="banner-overlay" />
         

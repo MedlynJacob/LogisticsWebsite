@@ -62,9 +62,9 @@ export default function AirFreight() {
     <div className="airfreight-page">
       {/* Banner Section */}
       <div className="airfreight-banner">
-        <div 
+        <div
           className="banner-background"
-          style={{ backgroundImage: "url('/images/air.jpg')" }}
+          style={{ backgroundImage: "url('/LogisticsWebsite/images/air.jpg')" }}
         />
         <div className="banner-overlay" />
         
