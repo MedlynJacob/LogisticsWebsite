@@ -1,0 +1,194 @@
+/* Customs Clearance Page */
+.customs-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* ===== Banner Section ===== */
+.customs-banner {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customs-page .banner-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.customs-page .banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(88, 28, 135, 0.8),
+    rgba(30, 58, 138, 0.7)
+  );
+  backdrop-filter: blur(2px);
+}
+
+.customs-page .banner-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+  max-width: 900px;
+}
+
+/* Banner Typography */
+.banner-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.banner-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== Container ===== */
+.customs-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+/* ===== Introduction Card ===== */
+.customs-page .intro-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+/* Shared typography */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 24px;
+}
+
+.intro-content {
+  color: #374151;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.intro-content p {
+  margin-bottom: 16px;
+}
+
+/* ===== CTA Button ===== */
+.cta-wrapper {
+  margin-top: 32px;
+}
+
+.cta-button {
+  background: #6d28d9;
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(109, 40, 217, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #5b21b6;
+  box-shadow: 0 15px 35px rgba(109, 40, 217, 0.4);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ===== Value Propositions ===== */
+.value-props {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.value-card {
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+}
+
+.value-purple {
+  background: linear-gradient(135deg, #6d28d9, #5b21b6);
+}
+
+.value-blue {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.value-indigo {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+}
+
+.value-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.value-description {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .customs-banner {
+    height: 60vh;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+  }
+
+  .banner-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .customs-banner {
+    height: 50vh;
+    margin-top: 30px;
+  }
+
+  .banner-title {
+    font-size: 2rem;
+  }
+
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+}

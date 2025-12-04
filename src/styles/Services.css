@@ -1,0 +1,78 @@
+.services-page .service-card {
+  min-height: 400px !important;  /* or 500px or 600px — try what looks best */
+  height: 500px !important;
+}
+
+.services-page {
+  padding: 40px;
+  text-align: center;
+  background-color: #f4f5f7;
+}
+
+.services-page .services-container {
+  min-height: 300px;
+}
+
+.services-page .services-header {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+
+.services-page .services-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;   /* prevents forced equal-height rows */
+}
+
+.services-page .service-card {
+  width: 260px;
+  height: 600px;   /* test with 400px — you can change later */
+  display: block;  /* prevents automatic shrinking */
+  flex-shrink: 0;  /* tells flexbox NOT to force-resize */
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+
+
+.services-page .service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.services-page .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.services-page .service-image {
+  display: none;
+}
+
+.services-page .service-title {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  white-space: nowrap;
+}
