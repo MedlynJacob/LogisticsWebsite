@@ -70,13 +70,6 @@ export default function AirFreight() {
         <div className="banner-overlay" />
         
         <div className="banner-content">
-          <div className="banner-icon">
-            <span className="plane-icon">✈️</span>
-          </div>
-          <h1 className="banner-title">Air Freight Services</h1>
-          <p className="banner-subtitle">
-            International Freight Forwarding - Air Freight Services
-          </p>
           <Link to="/services" className="back-link">← Back to Services</Link>
         </div>
       </div>
@@ -85,6 +78,7 @@ export default function AirFreight() {
       <div className="airfreight-container">
         {/* Introduction Card */}
         <div className="intro-card">
+        <h1 className="banner-title">Air Freight Services</h1>
           <h2 className="section-title">Fast, Reliable Air Cargo Solutions</h2>
           
           <div className="intro-content">

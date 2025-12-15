@@ -51,13 +51,6 @@ export default function SeaFreight() {
         <div className="banner-overlay" />
         
         <div className="banner-content">
-          <div className="banner-icon">
-            <span className="ship-icon">🚢</span>
-          </div>
-          <h1 className="banner-title">Sea / Ocean Freight Services</h1>
-          <p className="banner-subtitle">
-            Reliable Maritime Shipping Solutions Worldwide
-          </p>
           <Link to="/services" className="back-link">← Back to Services</Link>
         </div>
       </div>
@@ -66,6 +59,7 @@ export default function SeaFreight() {
       <div className="seafreight-container">
         {/* Introduction Card */}
         <div className="intro-card">
+        <h1 className="banner-title">Sea / Ocean Freight Services</h1>
           <h2 className="section-title">Your Trusted Sea Freight Partner</h2>
           
           <div className="intro-content">

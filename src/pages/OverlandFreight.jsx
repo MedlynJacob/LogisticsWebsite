@@ -61,13 +61,7 @@ export default function OverlandFreight() {
         <div className="banner-overlay" />
         
         <div className="banner-content">
-          <div className="banner-icon">
-            <span className="truck-icon">🚛</span>
-          </div>
-          <h1 className="banner-title">Overland Freight / By Road</h1>
-          <p className="banner-subtitle">
-            Flexible Regional Transport Solutions Across GCC Countries
-          </p>
+          
           <Link to="/services" className="back-link">← Back to Services</Link>
         </div>
       </div>
@@ -76,6 +70,7 @@ export default function OverlandFreight() {
       <div className="overland-container">
         {/* Introduction Card */}
         <div className="intro-card">
+        <h1 className="banner-title">Overland Freight / By Road</h1>
           <h2 className="section-title">Expert Road Freight Services</h2>
           
           <div className="intro-content">

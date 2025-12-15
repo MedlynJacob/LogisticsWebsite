@@ -19,10 +19,6 @@ export default function CustomsClearance() {
         <div className="banner-overlay" />
 
         <div className="banner-content">
-          <h1 className="banner-title">Customs Clearance & Brokerage</h1>
-          <p className="banner-subtitle">
-            Professional Customs Brokerage & Documentation Services
-          </p>
           <Link to="/services" className="back-link">← Back to Services</Link>
         </div>
       </div>
@@ -31,9 +27,9 @@ export default function CustomsClearance() {
       <div className="customs-container">
         {/* Intro Card */}
         <div className="intro-card">
-          <h2 className="section-title">Customs Clearance and Brokerage</h2>
 
           <div className="intro-content">
+          <h1 className="banner-title">Customs Clearance & Brokerage</h1>
             <p>
               We believe in proving total logistics, door to door. In that spirit, our Customs Brokerage Operations team assist our clients with their import Customs clearance and supply chain challenges. Our clients’ shipments can be customs cleared from all airports, seaports and borders in the Kingdom.
             </p>
