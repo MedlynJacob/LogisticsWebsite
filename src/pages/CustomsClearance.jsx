@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/CustomsClearance.css";
 
 export default function CustomsClearance() {
+  const base = import.meta.env.BASE_URL || '/';
   const handleQuoteClick = () => {
     window.location.href = "/quote";
   };
@@ -13,7 +14,7 @@ export default function CustomsClearance() {
       <div className="customs-banner">
         <div
           className="banner-background"
-          style={{ backgroundImage: "url('/images/customs.jpg')" }}
+          style={{ backgroundImage: `url(${base}images/customs.jpg)` }}
         />
         <div className="banner-overlay" />
 

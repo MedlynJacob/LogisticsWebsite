@@ -26,12 +26,6 @@
 .banner-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(6, 78, 135, 0.8),
-    rgba(14, 116, 144, 0.7)
-  );
-  backdrop-filter: blur(2px);
 }
 
 .banner-content {
