@@ -1,97 +1,137 @@
 .quote-page {
-max-width: 1000px;
-margin: 50px auto;
-padding: 35px;
-background: white;
-border-radius: 14px;
-box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
-animation: fadeIn 0.4s ease;
+  background: #f7f9fc;
+  padding-bottom: 60px;
 }
 
-
-.row {
-display: flex;
-gap: 25px;
-margin-bottom: 25px;
+.quote-banner {
+  background: url("/LogisticsWebsite/images/quote.jpg");
+  padding: 60px 0;
+  text-align: center;
+  color: white;
 }
-
-
-.field {
-flex: 1;
-display: flex;
-flex-direction: column;
-}
-
-
-label {
-margin-bottom: 6px;
-font-weight: 600;
-color: #333;
-}
-
-
-input,
-textarea {
-padding: 12px 14px;
-border: 1px solid #dcdfe4;
-border-radius: 10px;
-font-size: 15px;
-transition: 0.2s ease;
-}
-
-
-input:focus,
-textarea:focus {
-border-color: #2c5364;
-outline: none;
-box-shadow: 0 0 0 3px rgba(44, 83, 100, 0.18);
-}
-
-
-textarea {
-resize: none;
-}
-
-
-.submit-btn {
-margin-top: 20px;
-width: 100%;
-padding: 15px;
-border: none;
-border-radius: 12px;
-background: #2c5364;
-color: white;
-font-size: 17px;
-font-weight: 600;
-cursor: pointer;
-transition: 0.3s ease;
-}
-
-
-.submit-btn:hover {
-background: #1b2e38;
-}
-
-
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(10px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-
-@media (max-width: 768px) {
-.row {
-flex-direction: column;
-}
-
-
-.quote-container {
-margin: 20px;
-padding: 25px;
-}
-
 
 .quote-banner h1 {
-font-size: 28px;
+  font-size: 36px;
+  font-weight: 600;
 }
+
+.quote-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 35px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+}
+
+.row {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+input,
+textarea,
+select {
+  padding: 12px 14px;
+  border: 1px solid #dcdfe4;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+select.cargo-select {
+  height: 46px;
+}
+
+/* PHONE */
+.phone-wrapper {
+  position: relative;
+}
+
+.phone-wrapper input {
+  padding-left: 110px;
+}
+
+.phone-dropdown {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f1f3f6;
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #ccd2d8;
+}
+
+.country-dropdown {
+  padding: 12px 14px;
+  border: 1px solid #dcdfe4;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* DROPDOWNS */
+.dropdown-list {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccd2d8;
+  border-radius: 10px;
+  z-index: 999;
+}
+
+.dropdown-search {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f1f3f6;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #2c5364;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
 }

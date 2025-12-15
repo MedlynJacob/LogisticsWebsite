@@ -1,97 +1,272 @@
-// Quote.jsx
 import { useState } from "react";
 import "../styles/Quote.css";
+import rawCountryCodes from "../assets/Data/CountryCodes.json";
 
+// sort countries
+const countries = [...rawCountryCodes].sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
 
 export default function Quote() {
-const [formData, setFormData] = useState({
-name: "",
-phone: "",
-email: "",
-cargoType: "",
-origin: "",
-destination: "",
-commodity: "",
-description: "",
-});
+  const [showPhoneCodes, setShowPhoneCodes] = useState(false);
+  const [phoneSearch, setPhoneSearch] = useState("");
 
+  const [showOrigin, setShowOrigin] = useState(false);
+  const [originSearch, setOriginSearch] = useState("");
 
-const handleChange = (e) => {
-const { name, value } = e.target;
-setFormData({ ...formData, [name]: value });
-};
+  const [showDestination, setShowDestination] = useState(false);
+  const [destinationSearch, setDestinationSearch] = useState("");
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    cargoType: "",
+    commodity: "",
+    description: "",
+    origin: "",
+    destination: "",
+    code: "+1",
+    selectedCountry: {
+      name: "Canada",
+      emoji: "🇨🇦",
+      dial_code: "+1",
+    },
+  });
 
-const handleSubmit = (e) => {
-e.preventDefault();
-console.log("Quote Data:", formData);
-};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
+    // phone strictly numbers
+    if (name === "phone" && !/^\d*$/.test(value)) return;
 
-return (
-<div className="quote-page">
-<div className="quote-banner">
-<h1>Get a Quote</h1>
-</div>
+    setFormData({ ...formData, [name]: value });
+  };
 
+  const selectPhoneCountry = (c) => {
+    setFormData({
+      ...formData,
+      selectedCountry: c,
+      code: c.dial_code,
+    });
+    setShowPhoneCodes(false);
+    setPhoneSearch("");
+  };
 
-<div className="quote-container">
-<form onSubmit={handleSubmit}>
-{/* ROW 1 */}
-<div className="row">
-<div className="field">
-<label>Name</label>
-<input type="text" name="name" required value={formData.name} onChange={handleChange} />
-</div>
-<div className="field">
-<label>Contact Number</label>
-<input type="text" name="phone" required value={formData.phone} onChange={handleChange} />
-</div>
-</div>
+  return (
+    <div className="quote-page">
+      <div className="quote-banner">
+        <h1>Get a Quote</h1>
+      </div>
 
+      <div className="quote-container">
+        <form>
+          {/* ROW 1 */}
+          <div className="row">
+            <div className="field">
+              <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-{/* ROW 2 */}
-<div className="row">
-<div className="field">
-<label>Email Address</label>
-<input type="email" name="email" required value={formData.email} onChange={handleChange} />
-</div>
-<div className="field">
-<label>Cargo Type</label>
-<input type="text" name="cargoType" value={formData.cargoType} onChange={handleChange} />
-</div>
-</div>
+            <div className="field">
+              <label>Contact Number</label>
+              <div className="phone-wrapper">
+                <div
+                  className="phone-dropdown"
+                  onClick={() => setShowPhoneCodes(!showPhoneCodes)}
+                >
+                  <span>{formData.selectedCountry.emoji}</span>
+                  <span>{formData.selectedCountry.dial_code}</span>
+                  <span className="arrow">▾</span>
+                </div>
 
+                <input
+                  type="text"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
 
-{/* ROW 3 */}
-<div className="row">
-<div className="field">
-<label>Country of Origin</label>
-<input type="text" name="origin" value={formData.origin} onChange={handleChange} />
-</div>
-<div className="field">
-<label>Destination</label>
-<input type="text" name="destination" value={formData.destination} onChange={handleChange} />
-</div>
-</div>
+                {showPhoneCodes && (
+                  <div className="dropdown-list">
+                    <input
+                      className="dropdown-search"
+                      placeholder="Search country..."
+                      onChange={(e) => setPhoneSearch(e.target.value)}
+                    />
+                    <div className="dropdown-items">
+                      {countries
+                        .filter((c) =>
+                          c.name
+                            .toLowerCase()
+                            .includes(phoneSearch.toLowerCase())
+                        )
+                        .map((c) => (
+                          <div
+                            key={c.code}
+                            className="dropdown-item"
+                            onClick={() => selectPhoneCountry(c)}
+                          >
+                            {c.emoji} {c.name} ({c.dial_code})
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
 
+          {/* ROW 2 */}
+          <div className="row">
+            <div className="field">
+              <label>Email Address</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-{/* ROW 4 */}
-<div className="row">
-<div className="field">
-<label>Commodity</label>
-<textarea rows="3" name="commodity" value={formData.commodity} onChange={handleChange}></textarea>
-</div>
-<div className="field">
-<label>Description</label>
-<textarea rows="3" name="description" value={formData.description} onChange={handleChange}></textarea>
-</div>
-</div>
+            <div className="field">
+              <label>Cargo Type</label>
+              <select
+                name="cargoType"
+                value={formData.cargoType}
+                onChange={handleChange}
+                className="cargo-select"
+                required
+              >
+                <option value="">Select Cargo Type</option>
+                <option value="Air">Air</option>
+                <option value="Sea">Sea</option>
+                <option value="Overland">Overland</option>
+              </select>
+            </div>
+          </div>
 
+          {/* ROW 3 */}
+          <div className="row">
+            <div className="field">
+              <label>Country of Origin</label>
+              <div
+                className="country-dropdown"
+                onClick={() => setShowOrigin(!showOrigin)}
+              >
+                <span>{formData.origin || "Select Country"}</span>
+                <span className="arrow">▾</span>
+              </div>
 
-<button className="submit-btn">Submit</button>
-</form>
-</div>
-</div>
-);
+              {showOrigin && (
+                <div className="dropdown-list">
+                  <input
+                    className="dropdown-search"
+                    placeholder="Search country..."
+                    onChange={(e) => setOriginSearch(e.target.value)}
+                  />
+                  <div className="dropdown-items">
+                    {countries
+                      .filter((c) =>
+                        c.name
+                          .toLowerCase()
+                          .includes(originSearch.toLowerCase())
+                      )
+                      .map((c) => (
+                        <div
+                          key={c.code}
+                          className="dropdown-item"
+                          onClick={() => {
+                            setFormData({ ...formData, origin: c.name });
+                            setShowOrigin(false);
+                            setOriginSearch("");
+                          }}
+                        >
+                          {c.emoji} {c.name}
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="field">
+              <label>Destination</label>
+              <div
+                className="country-dropdown"
+                onClick={() => setShowDestination(!showDestination)}
+              >
+                <span>{formData.destination || "Select Country"}</span>
+                <span className="arrow">▾</span>
+              </div>
+
+              {showDestination && (
+                <div className="dropdown-list">
+                  <input
+                    className="dropdown-search"
+                    placeholder="Search country..."
+                    onChange={(e) => setDestinationSearch(e.target.value)}
+                  />
+                  <div className="dropdown-items">
+                    {countries
+                      .filter((c) =>
+                        c.name
+                          .toLowerCase()
+                          .includes(destinationSearch.toLowerCase())
+                      )
+                      .map((c) => (
+                        <div
+                          key={c.code}
+                          className="dropdown-item"
+                          onClick={() => {
+                            setFormData({ ...formData, destination: c.name });
+                            setShowDestination(false);
+                            setDestinationSearch("");
+                          }}
+                        >
+                          {c.emoji} {c.name}
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* ROW 4 */}
+          <div className="row">
+            <div className="field">
+              <label>Commodity</label>
+              <textarea
+                rows="4"
+                name="commodity"
+                value={formData.commodity}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="field">
+              <label>Description</label>
+              <textarea
+                rows="4"
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
+          <button className="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  );
 }

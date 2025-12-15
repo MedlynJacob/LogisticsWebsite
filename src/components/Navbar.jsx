@@ -22,7 +22,7 @@ export default function Navbar() {
           <Link to="/services" className={linkClass("/services")}>Services</Link>
           <Link to="/about" className={linkClass("/about")}>About</Link>
           <Link to="/contact" className={linkClass("/contact")}>Contact</Link>
-          <Link to="/quote" className="nav-link quote-link">Get a Quote</Link>
+          <Link to="/quote" className={`${linkClass("/quote")} quote-link`}>Get a Quote</Link>
         </div>
 
         <div
