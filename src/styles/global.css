@@ -50,5 +50,30 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Back link placed top-left within banner (not sticky) */
+.back-link {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+  z-index: 20;
+}
+
+/* Slightly smaller on small screens */
+@media (max-width: 480px) {
+  .back-link {
+    top: 12px;
+    left: 4px;
+    padding: 6px 10px;
+    font-size: 0.95rem;
+  }
+}
+
 
 

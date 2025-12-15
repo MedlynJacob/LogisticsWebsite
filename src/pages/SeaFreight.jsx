@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/SeaFreight.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function SeaFreight() {
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ export default function SeaFreight() {
   ];
 
   const handleQuoteClick = () => {
-    window.location.href = "/get-quote";
+    window.location.href = "/quote";
   };
 
   const handleAirFreightClick = () => {
@@ -58,6 +58,7 @@ export default function SeaFreight() {
           <p className="banner-subtitle">
             Reliable Maritime Shipping Solutions Worldwide
           </p>
+          <Link to="/services" className="back-link">← Back to Services</Link>
         </div>
       </div>
 

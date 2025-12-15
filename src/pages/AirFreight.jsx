@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/AirFreight.css";
 
 export default function AirFreight() {
@@ -55,7 +56,7 @@ export default function AirFreight() {
 
   const handleQuoteClick = () => {
     // Navigate to quote page or open contact form
-    window.location.href = "/get-quote";
+    window.location.href = "/quote";
   };
 
   return (
@@ -76,6 +77,7 @@ export default function AirFreight() {
           <p className="banner-subtitle">
             International Freight Forwarding - Air Freight Services
           </p>
+          <Link to="/services" className="back-link">← Back to Services</Link>
         </div>
       </div>
 

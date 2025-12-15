@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/CustomsClearance.css";
 
 export default function CustomsClearance() {
   const handleQuoteClick = () => {
-    window.location.href = "/get-quote";
+    window.location.href = "/quote";
   };
 
   return (
@@ -21,6 +22,7 @@ export default function CustomsClearance() {
           <p className="banner-subtitle">
             Professional Customs Brokerage & Documentation Services
           </p>
+          <Link to="/services" className="back-link">← Back to Services</Link>
         </div>
       </div>
 

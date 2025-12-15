@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/OverlandFreight.css";
 
 export default function OverlandFreight() {
@@ -46,7 +47,7 @@ export default function OverlandFreight() {
   ];
 
   const handleQuoteClick = () => {
-    window.location.href = "/get-quote";
+    window.location.href = "/quote";
   };
 
   return (
@@ -67,6 +68,7 @@ export default function OverlandFreight() {
           <p className="banner-subtitle">
             Flexible Regional Transport Solutions Across GCC Countries
           </p>
+          <Link to="/services" className="back-link">← Back to Services</Link>
         </div>
       </div>
 

@@ -26,11 +26,11 @@ export default function Quote() {
     description: "",
     origin: "",
     destination: "",
-    code: "+1",
+    code: "+966",
     selectedCountry: {
-      name: "Canada",
-      emoji: "🇨🇦",
-      dial_code: "+1",
+      name: "Saudi Arabia",
+      emoji: "🇸🇦",
+      dial_code: "+966",
     },
   });
 

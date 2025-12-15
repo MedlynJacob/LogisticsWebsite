@@ -23,13 +23,13 @@ export default function Contact() {
     email: "",
     phone: "",
     message: "",
-    code: "+1",
-    country: "",
-    countryEmoji: "🌍", // default icon
+    code: "+966",
+    country: "Saudi Arabia",
+    countryEmoji: "🇸🇦", // default icon
     selectedCountry: {
-      name: "Canada",
-      emoji: "🇨🇦",
-      dial_code: "+1",
+      name: "Saudi Arabia",
+      emoji: "🇸🇦",
+      dial_code: "+966",
     },
   });
 
