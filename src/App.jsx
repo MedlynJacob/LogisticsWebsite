@@ -13,7 +13,7 @@ import CustomsClearance from "./pages/CustomsClearance";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Hero />} />

@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import "../styles/Hero.css";
 
 export default function Hero() {
+  const base = import.meta.env.BASE_URL || '/';
   const images = [
-    "/LogisticsWebsite/images/air.jpg",
-    "/LogisticsWebsite/images/road.jpeg",
-    "/LogisticsWebsite/images/sea.jpg",
+    `${base}images/air.jpg`,
+    `${base}images/road.jpeg`,
+    `${base}images/sea.jpg`,
   ];
 
   const [index, setIndex] = useState(0);

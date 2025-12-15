@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <div className="nav-logo">UNI-Q</div>
+        <Link to="/" className="nav-logo">UNI-Q</Link>
 
         <div className={`nav-links ${open ? "open" : ""}`}>
           <Link to="/" className={linkClass("/")}>Home</Link>
