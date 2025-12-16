@@ -6,8 +6,8 @@
 
 /* Banner */
 .contact-banner {
-  background: url('/LogisticsWebsite/images/common3.jpg');
-  padding: 60px 0;
+  background: url('/LogisticsWebsite/images/road_f.jpeg') center/cover no-repeat;
+  padding: 140px 0;
   text-align: center;
   color: white;
 }

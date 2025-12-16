@@ -20,7 +20,7 @@ const services = [
   },
   {
     title: "Customs Clearance",
-    image: "/LogisticsWebsite/images/common.jpg",
+    image: "/LogisticsWebsite/images/customs.jpg",
     link: "/customs-clearance",
   },
 ];

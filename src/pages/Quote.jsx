@@ -56,10 +56,11 @@ export default function Quote() {
   return (
     <div className="quote-page">
       <div className="quote-banner">
-        <h1>Get a Quote</h1>
+        
       </div>
 
       <div className="quote-container">
+      <h1>Get a Quote</h1>
         <form>
           {/* ROW 1 */}
           <div className="row">

@@ -90,10 +90,11 @@ export default function Contact() {
   return (
     <div className="contact-page">
       <div className="contact-banner">
-        <h1>Contact Us</h1>
+        <h1> </h1>
       </div>
 
       <div className="contact-container">
+      <h1>Contact Us</h1>
         <form ref={form} onSubmit={sendEmail}>
           {/* ROW 1 */}
           <div className="row">

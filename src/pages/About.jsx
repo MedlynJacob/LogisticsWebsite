@@ -7,11 +7,11 @@ export default function AboutUs() {
 
       {/* Banner / Header */}
       <div className="about-hero">
-        <h1>About Us</h1>
       </div>
 
       {/* Company Description */}
       <div className="about-section">
+      <h1>About Us</h1>
         <p>
           Uni-Q is a leading Logistics provider in the Middle East & GCC region.
           At Unique International Logistics we offer wide array of services customized to the requirements of our valued customers.

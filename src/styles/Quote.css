@@ -4,8 +4,8 @@
 }
 
 .quote-banner {
-  background: url("/LogisticsWebsite/images/common4.jpg");
-  padding: 60px 0;
+  background: url("/LogisticsWebsite/images/common4.jpg") center/cover no-repeat;
+  padding: 140px 0;
   text-align: center;
   color: white;
 }

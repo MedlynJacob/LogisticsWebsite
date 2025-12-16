@@ -4,9 +4,11 @@ import "../styles/Hero.css";
 export default function Hero() {
   const base = import.meta.env.BASE_URL || '/';
   const images = [
-    `${base}images/air2.jpg`,
-    `${base}images/truck1.jpg`,
-    `${base}images/sea1.jpg`,
+    `${base}images/air.jpg`,
+    `${base}images/road.jpeg`,
+    `${base}images/sea.jpg`,
+    `${base}images/truck5.jpg`,
+    `${base}images/sea_f.png`
   ];
 
   const [index, setIndex] = useState(0);
