@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/CustomsClearance.css";
 
 export default function CustomsClearance() {
   const base = import.meta.env.BASE_URL || '/';
+  const navigate = useNavigate();
   const handleQuoteClick = () => {
-    window.location.href = "/quote";
+    navigate("/quote");
   };
 
   return (
@@ -17,7 +18,6 @@ export default function CustomsClearance() {
           style={{ backgroundImage: `url(${base}images/customs.jpg)` }}
         />
         <div className="banner-overlay" />
-
         <div className="banner-content">
           <Link to="/services" className="back-link">← Back to Services</Link>
         </div>

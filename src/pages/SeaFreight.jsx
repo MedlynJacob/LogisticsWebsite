@@ -33,7 +33,7 @@ export default function SeaFreight() {
   ];
 
   const handleQuoteClick = () => {
-    window.location.href = "/quote";
+    navigate("/quote");
   };
 
   const handleAirFreightClick = () => {

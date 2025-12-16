@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/OverlandFreight.css";
 
 export default function OverlandFreight() {
+  const navigate = useNavigate();
   const services = [
     { 
       icon: "📦", 
@@ -47,7 +48,7 @@ export default function OverlandFreight() {
   ];
 
   const handleQuoteClick = () => {
-    window.location.href = "/quote";
+    navigate("/quote");
   };
 
   return (

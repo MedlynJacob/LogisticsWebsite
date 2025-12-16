@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../styles/AirFreight.css";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AirFreight() {
   const services = [
@@ -56,8 +56,10 @@ export default function AirFreight() {
 
   const handleQuoteClick = () => {
     // Navigate to quote page or open contact form
-    window.location.href = "/quote";
+    navigate("/quote");
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="airfreight-page">

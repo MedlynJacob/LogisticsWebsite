@@ -20,9 +20,9 @@ export default function Navbar() {
         <div className={`nav-links ${open ? "open" : ""}`}>
           <Link to="/" className={linkClass("/")}>Home</Link>
           <Link to="/services" className={linkClass("/services")}>Services</Link>
-          <Link to="/about" className={linkClass("/about")}>About</Link>
+          <Link to="/about" className={linkClass("/about")}>About Us</Link>
           <Link to="/contact" className={linkClass("/contact")}>Contact</Link>
-          <Link to="/quote" className={`${linkClass("/quote")} quote-link`}>Get a Quote</Link>
+          <Link to="/quote" className={linkClass("/quote")}>Get a Quote</Link>
         </div>
 
         <div
