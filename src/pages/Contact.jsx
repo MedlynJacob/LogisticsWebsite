@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import { postContact } from "../services/api";
 import "../styles/Contact.css";
 import rawCountryCodes from "../assets/Data/CountryCodes.json";
 
@@ -54,7 +54,7 @@ export default function Contact() {
     setSearch("");
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
     const finalData = {
@@ -62,29 +62,32 @@ export default function Contact() {
       fullPhone: `${formData.code} ${formData.phone}`,
     };
 
-    emailjs
-      .send("your_service_id", "your_template_id", finalData, "your_public_key")
-      .then(
-        () => {
-          setPopup(true);
-          setTimeout(() => setPopup(false), 2500);
+    try {
+      const res = await postContact(finalData);
+      if (res.ok) {
+        setPopup(true);
+        setTimeout(() => setPopup(false), 2500);
 
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            message: "",
-            code: "+1",
-            country: "",
-            selectedCountry: {
-              name: "Canada",
-              emoji: "🇨🇦",
-              dial_code: "+1",
-            },
-          });
-        },
-        (error) => console.error("FAILED...", error)
-      );
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          code: "+1",
+          country: "",
+          selectedCountry: {
+            name: "Canada",
+            emoji: "🇨🇦",
+            dial_code: "+1",
+          },
+        });
+      } else {
+        const txt = await res.text();
+        console.error('Failed to send contact', txt);
+      }
+    } catch (err) {
+      console.error('Error sending contact', err);
+    }
   };
 
   return (

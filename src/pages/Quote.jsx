@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { postQuote } from "../services/api";
 import "../styles/Quote.css";
 import rawCountryCodes from "../assets/Data/CountryCodes.json";
 
@@ -33,6 +34,7 @@ export default function Quote() {
       dial_code: "+966",
     },
   });
+  const [popup, setPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,6 +55,44 @@ export default function Quote() {
     setPhoneSearch("");
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const finalData = {
+      ...formData,
+      fullPhone: `${formData.code} ${formData.phone}`,
+    };
+
+    try {
+      const res = await postQuote(finalData);
+      if (res.ok) {
+        setPopup(true);
+        setTimeout(() => setPopup(false), 2500);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          cargoType: "",
+          commodity: "",
+          description: "",
+          origin: "",
+          destination: "",
+          code: "+966",
+          selectedCountry: {
+            name: "Saudi Arabia",
+            emoji: "🇸🇦",
+            dial_code: "+966",
+          },
+        });
+      } else {
+        const txt = await res.text();
+        console.error('Failed to send quote', txt);
+      }
+    } catch (err) {
+      console.error('Error sending quote', err);
+    }
+  };
+
   return (
     <div className="quote-page">
       <div className="quote-banner">
@@ -61,7 +101,7 @@ export default function Quote() {
 
       <div className="quote-container">
       <h1>Get a Quote</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* ROW 1 */}
           <div className="row">
             <div className="field">
