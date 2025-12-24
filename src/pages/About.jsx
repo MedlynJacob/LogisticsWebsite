@@ -54,9 +54,9 @@ export default function AboutUs() {
       <div className="about-contact-box">
         <h3>Our Contacts Details</h3>
 
-        <p>📍 <strong>Address:</strong> cyxcqxvqib</p>
+        <p>📍 <strong>Address:</strong> Saraya Building, 5th floor, King Khaled Street, Dammam, KSA</p>
         <p>📞 <strong>Contact Numbers:</strong> +234567890</p>
-        <p>✉️ <strong>Email Address:</strong> gvqgjxvq@vaixyvaiyc</p>
+        <p>✉️ <strong>Email Address:</strong> sales@uniqIntl.com</p>
       </div>
     </div>
   );
