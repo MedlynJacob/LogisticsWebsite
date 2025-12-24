@@ -1,0 +1,18 @@
+<?php
+// Example configuration for send_form.php
+// Copy to `public/send_form_config.php` and set your values.
+
+// Destination address where form submissions will be sent
+$DEST_EMAIL = 'you@yourdomain.com';
+
+// Optional SMTP settings (recommended). If you use these, install PHPMailer
+// with Composer and place vendor/ in project root. Example using Gmail SMTP:
+// Composer: composer require phpmailer/phpmailer
+
+// SMTP host (leave empty to use PHP mail())
+$SMTP_HOST = 'smtp.example.com';
+$SMTP_PORT = 587; // usually 587 or 465
+$SMTP_USER = 'smtp-user@example.com';
+$SMTP_PASS = 'smtp-password';
+// 'tls' or 'ssl' or empty for STARTTLS default
+$SMTP_SECURE = 'tls';
