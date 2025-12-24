@@ -67,7 +67,7 @@ export default function AirFreight() {
       <div className="airfreight-banner">
         <div
           className="banner-background"
-          style={{ backgroundImage: "url('/LogisticsWebsite/images/air2.jpg')" }}
+          style={{ backgroundImage: "url('/LogisticsWebsite/images/air_f.jpeg')" }}
         />
         <div className="banner-overlay" />
         
