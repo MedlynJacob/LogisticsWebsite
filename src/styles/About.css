@@ -8,11 +8,12 @@
 /* Banner */
 .about-hero {
   background: url('/LogisticsWebsite/images/sea_f1.jpeg') center/cover no-repeat;
-  height: 260px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 45px;
 }
 
 .about-hero h1 {

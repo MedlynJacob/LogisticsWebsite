@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
+import logo from "../assets/Logo_uniq.png"; 
 
 export default function Navbar() {
   const location = useLocation();
@@ -15,7 +16,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <Link to="/" className="nav-logo">UNI-Q</Link>
+        <Link to="/" className="nav-logo">
+          <img src={logo} alt="UNI-Q Logo" className="logo-img" />
+        </Link>
 
         <div className={`nav-links ${open ? "open" : ""}`}>
           <Link to="/" className={linkClass("/")}>Home</Link>
