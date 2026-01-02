@@ -76,9 +76,9 @@ export default function Contact() {
           code: "+1",
           country: "",
           selectedCountry: {
-            name: "Canada",
-            emoji: "🇨🇦",
-            dial_code: "+1",
+            name: "Saudi Arabia",
+            emoji: "🇸🇦",
+            dial_code: "+966",
           },
         });
       } else {
