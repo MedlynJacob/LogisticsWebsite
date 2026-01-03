@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
-import logo from "../assets/logofinal.png"; 
+import logo from "../assets/logoFinal.jpeg"; 
 
 export default function Navbar() {
   const location = useLocation();
