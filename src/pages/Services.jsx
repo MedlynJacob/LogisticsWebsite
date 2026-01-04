@@ -5,22 +5,22 @@ import { useNavigate } from "react-router-dom";
 const services = [
   {
     title: "Air Freight",
-    image: "/LogisticsWebsite/images/air1.jpg",
+    image: "/images/air1.jpg",
     link: "/air-freight",
   },
   {
     title: "Sea Freight",
-    image: "/LogisticsWebsite/images/sea2.jpg",
+    image: "/images/sea2.jpg",
     link: "/sea-freight",
   },
   {
     title: "Overland Freight",
-    image: "/LogisticsWebsite/images/truck2.jpg",
+    image: "/images/truck2.jpg",
     link: "/overland-freight",
   },
   {
     title: "Customs Clearance",
-    image: "/LogisticsWebsite/images/customs.jpg",
+    image: "/images/customs.jpg",
     link: "/customs-clearance",
   },
 ];

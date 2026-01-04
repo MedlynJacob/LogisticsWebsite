@@ -15,7 +15,7 @@ export default function CustomsClearance() {
       <div className="customs-banner">
         <div
           className="banner-background"
-          style={{ backgroundImage: `url(${base}images/customs.jpg)` }}
+          style={{ backgroundImage: `url(/images/customs.jpg)` }}
         />
         <div className="banner-overlay" />
         <div className="banner-content">
