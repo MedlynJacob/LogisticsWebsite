@@ -56,7 +56,7 @@ export default function AboutUs() {
 
         <p>📍 <strong>Address:</strong> Saraya Building, 5th floor, King Faisal Street, Dammam, KSA</p>
         <p>📞 <strong>Contact Numbers:</strong> +966 50 226 9674 </p>
-        <p>✉️ <strong>Email Address:</strong> uniq@uniqIntl.com </p>
+        <p>✉️ <strong>Email Address:</strong> uniq@uniq-intl.com </p>
       </div>
     </div>
   );
